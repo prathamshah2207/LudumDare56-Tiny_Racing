@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dyj0vxtdewvf4"]
+
+[ext_resource type="Texture2D" uid="uid://cqene2yndbr1p" path="res://Sprites/Cart.png" id="1_63vv1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ldwdx"]
+size = Vector2(70, 92)
+
+[node name="Bot" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_63vv1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ldwdx")
