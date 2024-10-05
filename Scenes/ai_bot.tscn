@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dyj0vxtdewvf4"]
+
+[ext_resource type="Texture2D" uid="uid://cqene2yndbr1p" path="res://Sprites/Cart.png" id="1_jcsup"]
+[ext_resource type="Script" path="res://Scripts/ai_bot.gd" id="1_koa2u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ldwdx"]
+size = Vector2(70, 92)
+
+[node name="AIBot" type="CharacterBody2D"]
+script = ExtResource("1_koa2u")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_jcsup")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ldwdx")

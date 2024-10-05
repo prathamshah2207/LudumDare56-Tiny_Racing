@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1oow8fd8ruve"]
+
+[ext_resource type="PackedScene" uid="uid://dyj0vxtdewvf4" path="res://Scenes/ai_bot.tscn" id="1_o1dyd"]
+
+[node name="Bot_TestScene" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="AIBot" parent="." instance=ExtResource("1_o1dyd")]
