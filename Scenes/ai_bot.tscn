@@ -1,13 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://dyj0vxtdewvf4"]
+[gd_scene load_steps=5 format=3 uid="uid://dyj0vxtdewvf4"]
 
 [ext_resource type="Texture2D" uid="uid://cqene2yndbr1p" path="res://Sprites/Cart.png" id="1_jcsup"]
 [ext_resource type="Script" path="res://Scripts/ai_bot.gd" id="1_koa2u"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6nvfs"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ldwdx"]
 size = Vector2(70, 92)
 
-[node name="AIBot" type="CharacterBody2D"]
+[node name="AIBot" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_6nvfs")
+contact_monitor = true
+max_contacts_reported = 5
+linear_damp_mode = 1
+linear_damp = 10.0
+angular_damp_mode = 1
+angular_damp = 10.0
 script = ExtResource("1_koa2u")
+turn_speed = 4.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
