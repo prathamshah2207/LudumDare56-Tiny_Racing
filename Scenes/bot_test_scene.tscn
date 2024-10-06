@@ -1,11 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b1oow8fd8ruve"]
+[gd_scene load_steps=4 format=3 uid="uid://b1oow8fd8ruve"]
 
 [ext_resource type="PackedScene" uid="uid://dyj0vxtdewvf4" path="res://Scenes/ai_bot.tscn" id="1_o1dyd"]
-
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_hxiu2"]
-vertices = PackedVector2Array(-730.219, -230.453, -780.703, 143.758, -1029.9, 137.25, -1025.02, -347.641, -930.719, -541.039, -556.031, -543.992, -610.203, -293.609, -158, -365.969, 261.891, -535, 202.063, -381.008, 600.172, -359.898, 874.922, -515.133, 818.188, -273.32, 1067, -336.633, 1067, -135.039, 868.773, -64.1797, 815.539, -257.398, 568.867, -96.2891, 353.773, -235.07, -39.1172, 34.4375, 7.10938, -124.102, 373.18, 14.6016, 39.3438, 157.359, 321.594, 233.609, 513.789, 126.422, 529.383, 338.031, 715.094, 160.82, -996.742, 460.094, -1036.93, 243.438, -1030.72, 159.172, -782, 163.813, -782, 287.219, -910.367, 545.508, -745.32, 567, -541.617, 367, -402.742, 567, -62.0313, 584.977, -207.391, 367, 27.9531, 383.023, 308.68, 561, 218.758, 372.023, 460.992, 396.25, 644.781, 561, 508, 371.617, 1005.22, 427.344, 865.992, 556.078, 888.719, 200.281, 977.813, 266.617)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(0, 4, 5, 6), PackedInt32Array(7, 6, 5, 8), PackedInt32Array(9, 7, 8), PackedInt32Array(10, 9, 8, 11), PackedInt32Array(12, 10, 11, 13), PackedInt32Array(12, 13, 14, 15, 16), PackedInt32Array(16, 15, 17, 18), PackedInt32Array(19, 20, 18, 17, 21, 22), PackedInt32Array(23, 22, 21, 24), PackedInt32Array(25, 23, 24, 26), PackedInt32Array(27, 28, 29, 30, 31, 32), PackedInt32Array(33, 32, 31, 34, 35), PackedInt32Array(36, 35, 34, 37, 38, 39), PackedInt32Array(39, 38, 40, 41, 42), PackedInt32Array(42, 41, 43), PackedInt32Array(44, 45, 42, 43, 25, 26, 46, 47)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-772, 154, -1040, 147, -1035, -350, -937, -551, -556, -554, 262, -545, 879, -525, 1077, -341, 1077, -128, 870, -54, 571, -86, 391, 16, 518, 117, 717, 151, 893, 191, 987, 261, 1016, 431, 870, 566, 645, 571, 309, 571, -62, 595, -403, 577, -746, 577, -915, 555, -1006, 465, -1047, 244, -1040, 149, -772, 154, -772, 280, -540, 357, -207, 357, 28, 373, 219, 362, 459, 386, 501, 364, 515, 342, 318, 243, 33, 166, -50, 36, -1, -132, 352, -245, 807, -267, 598, -350, 202, -371, -157, -356, -607, -284, -721, -224)])
+[ext_resource type="PackedScene" uid="uid://chv831vy0bxmg" path="res://Scenes/waypoint_manager.tscn" id="2_rtadq"]
+[ext_resource type="PackedScene" uid="uid://br8yilt84jai3" path="res://Scenes/waypoint_node.tscn" id="3_1yrk8"]
 
 [node name="Bot_TestScene" type="Node2D"]
 
@@ -15,6 +12,22 @@ zoom = Vector2(0.5, 0.5)
 [node name="AIBot" parent="." instance=ExtResource("1_o1dyd")]
 position = Vector2(-881, 0)
 
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-position = Vector2(27, 11)
-navigation_polygon = SubResource("NavigationPolygon_hxiu2")
+[node name="WaypointManager" parent="." instance=ExtResource("2_rtadq")]
+
+[node name="WaypointNode" parent="WaypointManager" instance=ExtResource("3_1yrk8")]
+position = Vector2(-880, 0)
+
+[node name="WaypointNode2" parent="WaypointManager" instance=ExtResource("3_1yrk8")]
+position = Vector2(-809, -311)
+
+[node name="WaypointNode3" parent="WaypointManager" instance=ExtResource("3_1yrk8")]
+position = Vector2(-125, -362)
+
+[node name="WaypointNode4" parent="WaypointManager" instance=ExtResource("3_1yrk8")]
+position = Vector2(574, -230)
+
+[node name="WaypointNode5" parent="WaypointManager" instance=ExtResource("3_1yrk8")]
+position = Vector2(570, 314)
+
+[node name="WaypointNode6" parent="WaypointManager" instance=ExtResource("3_1yrk8")]
+position = Vector2(-408, 350)
