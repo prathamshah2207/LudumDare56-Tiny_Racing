@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://25aihjsn44qi"]
+
+[ext_resource type="Texture2D" uid="uid://ccc2hjggiyxh0" path="res://resources/Poliigon_StoneQuartzite_8060/1K/Poliigon_StoneQuartzite_8060_BaseColor.jpg" id="1_8ae7j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tk2or"]
+size = Vector2(1152, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o2uft"]
+size = Vector2(1152, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rfmfw"]
+size = Vector2(1152, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vbc00"]
+size = Vector2(1152, 10)
+
+[node name="KitchenCounterTrack" type="Node2D"]
+
+[node name="CounterSurface" type="Sprite2D" parent="."]
+position = Vector2(577, 321)
+scale = Vector2(1.13086, 0.626953)
+texture = ExtResource("1_8ae7j")
+
+[node name="TrackBoundaries" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TrackBoundaries"]
+position = Vector2(-4, -44)
+shape = SubResource("RectangleShape2D_tk2or")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="TrackBoundaries"]
+position = Vector2(33, 49)
+shape = SubResource("RectangleShape2D_o2uft")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="TrackBoundaries"]
+shape = SubResource("RectangleShape2D_rfmfw")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="TrackBoundaries"]
+position = Vector2(6, 27)
+shape = SubResource("RectangleShape2D_vbc00")
