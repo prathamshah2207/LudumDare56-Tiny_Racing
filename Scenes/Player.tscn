@@ -110,7 +110,8 @@ gravity_scale = 0.0
 center_of_mass_mode = 1
 center_of_mass = Vector2(0, 8)
 inertia = 100.0
-linear_damp = 5.0
+linear_damp_mode = 1
+linear_damp = 4.0
 angular_damp = 10.0
 script = ExtResource("1_2nj5j")
 

@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-[gd_scene load_steps=30 format=3 uid="uid://bwd0gsxb321qe"]
-=======
-[gd_scene load_steps=29 format=3 uid="uid://dod3ebsefr4h8"]
->>>>>>> master
+[gd_scene load_steps=31 format=3 uid="uid://bwd0gsxb321qe"]
 
 [ext_resource type="PackedScene" uid="uid://ctgtg7kolhob4" path="res://Scenes/Player.tscn" id="1_hjw4o"]
 [ext_resource type="Texture2D" uid="uid://ctkdamwwvk7ff" path="res://resources/floor_tileset/Poliigon_StoneQuartzite_8060/1K/Poliigon_StoneQuartzite_8060_BaseColor.jpg" id="1_j0jx0"]
@@ -16,16 +12,10 @@
 [ext_resource type="Script" path="res://Scripts/slow_effect.gd" id="5_ykjl7"]
 [ext_resource type="Texture2D" uid="uid://bci7dynealimw" path="res://Sprites/sink1.png" id="6_qgwdi"]
 [ext_resource type="Texture2D" uid="uid://6kpvobrv4483" path="res://Sprites/friedEgg_128.png" id="7_q0hnc"]
-<<<<<<< HEAD
-[ext_resource type="PackedScene" uid="uid://b4igxx641csf2" path="res://Scenes/waypoint_manager.tscn" id="10_8et1v"]
-[ext_resource type="PackedScene" uid="uid://bbiaxhc414u7i" path="res://Scenes/line_node.tscn" id="11_khni6"]
+[ext_resource type="PackedScene" uid="uid://b4igxx641csf2" path="res://Scripts/Scenes/waypoint_manager.tscn" id="10_8et1v"]
+[ext_resource type="PackedScene" uid="uid://bbiaxhc414u7i" path="res://Scripts/Scenes/line_node.tscn" id="11_khni6"]
 [ext_resource type="PackedScene" uid="uid://csld4j3p01dgy" path="res://Scenes/ai_bot.tscn" id="12_u1m1a"]
-=======
-[ext_resource type="PackedScene" uid="uid://xv28867g5b80" path="res://Scenes/waypoint_manager.tscn" id="10_8et1v"]
-[ext_resource type="PackedScene" uid="uid://ctcmx3k7jjx5p" path="res://Scenes/line_node.tscn" id="11_khni6"]
-[ext_resource type="PackedScene" uid="uid://bd71kj73tuy25" path="res://Scenes/ai_bot.tscn" id="12_u1m1a"]
-[ext_resource type="PackedScene" uid="uid://lp0pwycl6e6" path="res://Scenes/pause_menu.tscn" id="14_spwhs"]
->>>>>>> master
+[ext_resource type="PackedScene" path="res://Scenes/pause_menu.tscn" id="16_cwwsq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7fgtb"]
 texture = ExtResource("2_lt1y8")
@@ -1776,7 +1766,7 @@ radius = 32.0156
 size = Vector2(20, 642.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o2uft"]
-size = Vector2(1158, 20)
+size = Vector2(1158, 23)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rfmfw"]
 size = Vector2(20, 643)
@@ -1917,7 +1907,7 @@ position = Vector2(-12, 321.25)
 shape = SubResource("RectangleShape2D_tk2or")
 
 [node name="top_edge" type="CollisionShape2D" parent="TrackBoundaries"]
-position = Vector2(577, -11)
+position = Vector2(577, -12.5)
 shape = SubResource("RectangleShape2D_o2uft")
 
 [node name="right_edge" type="CollisionShape2D" parent="TrackBoundaries"]
@@ -2028,7 +2018,7 @@ position = Vector2(55, 461)
 z_index = 7
 position = Vector2(140, 460)
 
-[node name="PauseMenu" parent="." instance=ExtResource("14_spwhs")]
+[node name="PauseMenu" parent="." instance=ExtResource("16_cwwsq")]
 visible = false
 
 [connection signal="body_entered" from="CounterSurface/Obstacles/waterSpilled" to="CounterSurface/Obstacles/waterSpilled" method="_on_body_entered"]

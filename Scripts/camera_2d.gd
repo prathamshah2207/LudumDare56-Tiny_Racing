@@ -14,7 +14,7 @@ func _ready():
 
 	# Set a slower time scale to emphasize the zoomed-out effect
 	Engine.time_scale = 0.1
-	get_tree().create_timer(0.1).connect("timeout", _start_moving)
+	get_tree().create_timer(0.05).connect("timeout", _start_moving)
 
 func _start_moving():
 	moving_to_target = true
