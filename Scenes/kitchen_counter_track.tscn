@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cqk6u6cdydwtu"]
+[gd_scene load_steps=23 format=3 uid="uid://cqk6u6cdydwtu"]
 
 [ext_resource type="Texture2D" uid="uid://ctkdamwwvk7ff" path="res://resources/floor_tileset/Poliigon_StoneQuartzite_8060/1K/Poliigon_StoneQuartzite_8060_BaseColor.jpg" id="1_j0jx0"]
 [ext_resource type="Script" path="res://Scenes/start_finish_line.gd" id="2_1mtsj"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://4mw6hu2p16wh" path="res://resources/startline/start piskel.png" id="4_oedf3"]
 [ext_resource type="Texture2D" uid="uid://cuqc7074qvj6h" path="res://Sprites/water_spilled.svg" id="5_35an8"]
 [ext_resource type="Texture2D" uid="uid://bci7dynealimw" path="res://Sprites/sink1.png" id="6_qgwdi"]
+[ext_resource type="Texture2D" uid="uid://6kpvobrv4483" path="res://Sprites/friedEgg_128.png" id="7_q0hnc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7fgtb"]
 texture = ExtResource("2_lt1y8")
@@ -1751,6 +1752,9 @@ radius = 201.308
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iabfj"]
 size = Vector2(464.293, 534.997)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_4ivv3"]
+radius = 32.0156
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tk2or"]
 size = Vector2(20, 642.5)
 
@@ -1856,6 +1860,23 @@ texture = ExtResource("6_qgwdi")
 position = Vector2(4482.85, -4408.53)
 rotation = 1.88057
 shape = SubResource("RectangleShape2D_iabfj")
+
+[node name="omlet" type="StaticBody2D" parent="CounterSurface/Obstacles"]
+z_index = 5
+rotation = 1.26452
+scale = Vector2(0.2, 0.2)
+
+[node name="Sprite2D" type="Sprite2D" parent="CounterSurface/Obstacles/omlet"]
+position = Vector2(2821.34, 16.436)
+rotation = 0.00552252
+scale = Vector2(3.02628, 3.10385)
+texture = ExtResource("7_q0hnc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CounterSurface/Obstacles/omlet"]
+position = Vector2(2821.34, 16.4354)
+rotation = 1.88057
+scale = Vector2(5, 5)
+shape = SubResource("CircleShape2D_4ivv3")
 
 [node name="TrackBoundaries" type="StaticBody2D" parent="."]
 
