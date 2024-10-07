@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://4t7bnyoxpcrm"]
+[gd_scene load_steps=5 format=3 uid="uid://c5v22dtlch47c"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_c1ybn"]
+[ext_resource type="Texture2D" uid="uid://cfi3lmnuws2je" path="res://Sprites/background.jpg" id="2_okr3g"]
 
 [sub_resource type="FontFile" id="FontFile_fy562"]
 cache/0/32/0/ascent = 0.0
@@ -47,6 +48,8 @@ layout_mode = 2
 offset_top = 72.0
 offset_right = 600.0
 offset_bottom = 125.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_vertical = 6
 
 [node name="StartButton" type="Button" parent="Control/Panel/HBoxContainer"]
@@ -62,6 +65,8 @@ layout_mode = 2
 offset_top = 274.0
 offset_right = 600.0
 offset_bottom = 327.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_vertical = 6
 
 [node name="QuitButton" type="Button" parent="Control/Panel/HBoxContainer2"]
@@ -70,6 +75,12 @@ size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 32
 text = "Quit
 "
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/Panel"]
+z_index = -1
+position = Vector2(301.5, 202)
+scale = Vector2(0.464844, 0.533516)
+texture = ExtResource("2_okr3g")
 
 [connection signal="pressed" from="Control/Panel/HBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Control/Panel/HBoxContainer2/QuitButton" to="." method="_on_quit_button_pressed"]

@@ -1,0 +1,127 @@
+[gd_scene load_steps=2 format=3 uid="uid://cw224bdtr1uut"]
+
+[ext_resource type="Script" path="res://Scripts/level_complete.gd" id="1_kqkuh"]
+
+[node name="LevelComplete" type="CanvasLayer"]
+script = ExtResource("1_kqkuh")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.196078)
+
+[node name="menuBackground" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(900, 350)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -275.0
+offset_right = 250.0
+offset_bottom = 275.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0.262745, 0.286275, 0.505882, 0.87451)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="menuBackground"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -146.0
+offset_top = 14.0
+offset_right = 202.0
+offset_bottom = 88.0
+grow_horizontal = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 45
+text = "Level Complete"
+
+[node name="Rank" type="RichTextLabel" parent="menuBackground"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -103.0
+offset_top = -125.0
+offset_right = 124.0
+offset_bottom = 56.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 40
+text = "1. AIBot1
+2. Player
+3. AIBot4"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="menuBackground"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -210.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="menuBackground/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+alignment = 1
+
+[node name="Retry" type="Button" parent="menuBackground/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_hover_color = Color(0.686275, 0.662745, 0.258824, 1)
+theme_override_colors/font_pressed_color = Color(0.539605, 0.52007, 0.186432, 1)
+theme_override_colors/font_color = Color(0.894118, 0.87451, 0.494118, 1)
+theme_override_font_sizes/font_size = 40
+text = "Retry"
+flat = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="menuBackground/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+alignment = 1
+
+[node name="MainMenu" type="Button" parent="menuBackground/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_hover_color = Color(0.686275, 0.662745, 0.258824, 1)
+theme_override_colors/font_pressed_color = Color(0.541176, 0.521569, 0.188235, 1)
+theme_override_colors/font_color = Color(0.894118, 0.87451, 0.494118, 1)
+theme_override_font_sizes/font_size = 40
+text = "Main Menu"
+flat = true
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="menuBackground/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+alignment = 1
+
+[node name="Quit" type="Button" parent="menuBackground/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/font_hover_color = Color(0.687704, 0.664375, 0.259995, 1)
+theme_override_colors/font_pressed_color = Color(0.541176, 0.521569, 0.188235, 1)
+theme_override_colors/font_color = Color(0.894118, 0.87451, 0.494118, 1)
+theme_override_font_sizes/font_size = 40
+text = "Quit"
+flat = true
+
+[connection signal="pressed" from="menuBackground/VBoxContainer/HBoxContainer/Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="menuBackground/VBoxContainer/HBoxContainer2/MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="menuBackground/VBoxContainer/HBoxContainer3/Quit" to="." method="_on_quit_pressed"]

@@ -1,8 +1,10 @@
-[gd_scene load_steps=29 format=3 uid="uid://cqk6u6cdydwtu"]
+[gd_scene load_steps=32 format=3 uid="uid://bwd0gsxb321qe"]
 
+[ext_resource type="PackedScene" uid="uid://ctgtg7kolhob4" path="res://Scenes/Player.tscn" id="1_hjw4o"]
 [ext_resource type="Texture2D" uid="uid://ctkdamwwvk7ff" path="res://resources/floor_tileset/Poliigon_StoneQuartzite_8060/1K/Poliigon_StoneQuartzite_8060_BaseColor.jpg" id="1_j0jx0"]
 [ext_resource type="Script" path="res://Scripts/start_finish_line.gd" id="2_1mtsj"]
 [ext_resource type="Texture2D" uid="uid://cjto8es6e22q6" path="res://resources/floor_tileset/tilesey/Tilelists/Tilelist2.png" id="2_lt1y8"]
+[ext_resource type="Script" path="res://Scripts/camera_2d.gd" id="2_ywq1i"]
 [ext_resource type="Texture2D" uid="uid://b0km4lkntamun" path="res://Sprites/knife.png" id="3_a2201"]
 [ext_resource type="Texture2D" uid="uid://cilcnrh03wvo1" path="res://Sprites/choppingBoard2.png" id="4_ncfba"]
 [ext_resource type="Texture2D" uid="uid://4mw6hu2p16wh" path="res://resources/startline/start piskel.png" id="4_oedf3"]
@@ -10,10 +12,11 @@
 [ext_resource type="Script" path="res://Scripts/slow_effect.gd" id="5_ykjl7"]
 [ext_resource type="Texture2D" uid="uid://bci7dynealimw" path="res://Sprites/sink1.png" id="6_qgwdi"]
 [ext_resource type="Texture2D" uid="uid://6kpvobrv4483" path="res://Sprites/friedEgg_128.png" id="7_q0hnc"]
-[ext_resource type="PackedScene" path="res://Scenes/waypoint_manager.tscn" id="10_8et1v"]
-[ext_resource type="PackedScene" path="res://Scenes/line_node.tscn" id="11_khni6"]
-[ext_resource type="PackedScene" uid="uid://cf5obucwm71vv" path="res://Scenes/ai_bot.tscn" id="12_u1m1a"]
-[ext_resource type="PackedScene" path="res://Scenes/pause_menu.tscn" id="14_spwhs"]
+[ext_resource type="PackedScene" uid="uid://b4igxx641csf2" path="res://Scripts/Scenes/waypoint_manager.tscn" id="10_8et1v"]
+[ext_resource type="PackedScene" uid="uid://bbiaxhc414u7i" path="res://Scripts/Scenes/line_node.tscn" id="11_khni6"]
+[ext_resource type="PackedScene" uid="uid://csld4j3p01dgy" path="res://Scenes/ai_bot.tscn" id="12_u1m1a"]
+[ext_resource type="PackedScene" path="res://Scenes/pause_menu.tscn" id="16_cwwsq"]
+[ext_resource type="PackedScene" uid="uid://cw224bdtr1uut" path="res://Scenes/LevelComplete.tscn" id="17_w236h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7fgtb"]
 texture = ExtResource("2_lt1y8")
@@ -1764,7 +1767,7 @@ radius = 32.0156
 size = Vector2(20, 642.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o2uft"]
-size = Vector2(1158, 20)
+size = Vector2(1158, 23)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rfmfw"]
 size = Vector2(20, 643)
@@ -1779,6 +1782,13 @@ size = Vector2(199, 20.25)
 size = Vector2(196, 20)
 
 [node name="KitchenCounterTrack" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_hjw4o")]
+z_index = 6
+position = Vector2(95, 423)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+script = ExtResource("2_ywq1i")
 
 [node name="CounterSurface" type="Sprite2D" parent="."]
 z_index = 1
@@ -1898,7 +1908,7 @@ position = Vector2(-12, 321.25)
 shape = SubResource("RectangleShape2D_tk2or")
 
 [node name="top_edge" type="CollisionShape2D" parent="TrackBoundaries"]
-position = Vector2(577, -11)
+position = Vector2(577, -12.5)
 shape = SubResource("RectangleShape2D_o2uft")
 
 [node name="right_edge" type="CollisionShape2D" parent="TrackBoundaries"]
@@ -1993,7 +2003,7 @@ position = Vector2(60, 474)
 
 [node name="Bots" type="Node" parent="."]
 
-[node name="AIBot" parent="Bots" instance=ExtResource("12_u1m1a")]
+[node name="AIBot1" parent="Bots" instance=ExtResource("12_u1m1a")]
 z_index = 7
 position = Vector2(54, 390)
 
@@ -2009,8 +2019,12 @@ position = Vector2(55, 461)
 z_index = 7
 position = Vector2(140, 460)
 
-[node name="PauseMenu" parent="." instance=ExtResource("14_spwhs")]
+[node name="PauseMenu" parent="." instance=ExtResource("16_cwwsq")]
 visible = false
+
+[node name="LevelComplete" parent="." instance=ExtResource("17_w236h")]
+layer = 4
+script = null
 
 [connection signal="body_entered" from="CounterSurface/Obstacles/waterSpilled" to="CounterSurface/Obstacles/waterSpilled" method="_on_body_entered"]
 [connection signal="body_exited" from="CounterSurface/Obstacles/waterSpilled" to="CounterSurface/Obstacles/waterSpilled" method="_on_body_exited"]
