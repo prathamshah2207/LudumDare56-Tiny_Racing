@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://6kpvobrv4483" path="res://Sprites/friedEgg_128.png" id="7_q0hnc"]
 [ext_resource type="PackedScene" path="res://Scenes/waypoint_manager.tscn" id="10_8et1v"]
 [ext_resource type="PackedScene" path="res://Scenes/line_node.tscn" id="11_khni6"]
-[ext_resource type="PackedScene" path="res://Scenes/ai_bot.tscn" id="12_u1m1a"]
+[ext_resource type="PackedScene" uid="uid://cf5obucwm71vv" path="res://Scenes/ai_bot.tscn" id="12_u1m1a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7fgtb"]
 texture = ExtResource("2_lt1y8")
