@@ -2,5 +2,9 @@
 
 [ext_resource type="Script" path="res://Scripts/waypoint_node.gd" id="1_cdmpe"]
 
-[node name="WaypointNode" type="Node2D"]
+[node name="LineNode" type="Node2D"]
 script = ExtResource("1_cdmpe")
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(-150, 0, 150, 0)
+width = 5.0
