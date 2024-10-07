@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brwervtq6y3xu"
-path="res://.godot/imported/Cart.png-3fd66320818ac507ebd7c2dee19ea621.ctex"
+uid="uid://cilcnrh03wvo1"
+path="res://.godot/imported/choppingBoard2.png-2e45fb215dc69434a63c7e004f642be7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Cart.png"
-dest_files=["res://.godot/imported/Cart.png-3fd66320818ac507ebd7c2dee19ea621.ctex"]
+source_file="res://Sprites/choppingBoard2.png"
+dest_files=["res://.godot/imported/choppingBoard2.png-2e45fb215dc69434a63c7e004f642be7.ctex"]
 
 [params]
 

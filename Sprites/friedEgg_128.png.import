@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brwervtq6y3xu"
-path="res://.godot/imported/Cart.png-3fd66320818ac507ebd7c2dee19ea621.ctex"
+uid="uid://6kpvobrv4483"
+path="res://.godot/imported/friedEgg_128.png-c05d6506ade55a0c7f51a268f08e8ac3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Cart.png"
-dest_files=["res://.godot/imported/Cart.png-3fd66320818ac507ebd7c2dee19ea621.ctex"]
+source_file="res://Sprites/friedEgg_128.png"
+dest_files=["res://.godot/imported/friedEgg_128.png-c05d6506ade55a0c7f51a268f08e8ac3.ctex"]
 
 [params]
 

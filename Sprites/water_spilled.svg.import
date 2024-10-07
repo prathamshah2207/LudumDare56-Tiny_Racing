@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brwervtq6y3xu"
-path="res://.godot/imported/Cart.png-3fd66320818ac507ebd7c2dee19ea621.ctex"
+uid="uid://cuqc7074qvj6h"
+path="res://.godot/imported/water_spilled.svg-fff08ef820d83009e3550e36b2c0a50b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Cart.png"
-dest_files=["res://.godot/imported/Cart.png-3fd66320818ac507ebd7c2dee19ea621.ctex"]
+source_file="res://Sprites/water_spilled.svg"
+dest_files=["res://.godot/imported/water_spilled.svg-fff08ef820d83009e3550e36b2c0a50b.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

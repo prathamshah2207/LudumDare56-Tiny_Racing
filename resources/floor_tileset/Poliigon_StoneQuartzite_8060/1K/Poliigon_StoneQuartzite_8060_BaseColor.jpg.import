@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brwervtq6y3xu"
-path="res://.godot/imported/Cart.png-3fd66320818ac507ebd7c2dee19ea621.ctex"
+uid="uid://ctkdamwwvk7ff"
+path="res://.godot/imported/Poliigon_StoneQuartzite_8060_BaseColor.jpg-b5263ab9a77536ea8fdf1c2501f8ff72.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Cart.png"
-dest_files=["res://.godot/imported/Cart.png-3fd66320818ac507ebd7c2dee19ea621.ctex"]
+source_file="res://resources/floor_tileset/Poliigon_StoneQuartzite_8060/1K/Poliigon_StoneQuartzite_8060_BaseColor.jpg"
+dest_files=["res://.godot/imported/Poliigon_StoneQuartzite_8060_BaseColor.jpg-b5263ab9a77536ea8fdf1c2501f8ff72.ctex"]
 
 [params]
 
