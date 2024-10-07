@@ -1795,6 +1795,6 @@ shape = SubResource("RectangleShape2D_kmtmg")
 
 [node name="Sprite2D" type="Sprite2D" parent="StartFinishLine/CollisionShape2D"]
 z_index = 1
-position = Vector2(49, -308)
-scale = Vector2(2.70312, 0.416016)
+position = Vector2(48.5, -308)
+scale = Vector2(2.71094, 0.416016)
 texture = ExtResource("4_oedf3")
