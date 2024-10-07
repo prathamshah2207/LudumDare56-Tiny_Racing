@@ -1,7 +1,7 @@
 [gd_scene load_steps=23 format=3 uid="uid://bwd0gsxb321qe"]
 
 [ext_resource type="Texture2D" uid="uid://ctkdamwwvk7ff" path="res://resources/floor_tileset/Poliigon_StoneQuartzite_8060/1K/Poliigon_StoneQuartzite_8060_BaseColor.jpg" id="1_j0jx0"]
-[ext_resource type="Script" path="res://Scenes/start_finish_line.gd" id="2_1mtsj"]
+[ext_resource type="Script" path="res://Scripts/start_finish_line.gd" id="2_1mtsj"]
 [ext_resource type="Texture2D" uid="uid://cjto8es6e22q6" path="res://resources/floor_tileset/tilesey/Tilelists/Tilelist2.png" id="2_lt1y8"]
 [ext_resource type="Texture2D" uid="uid://b0km4lkntamun" path="res://Sprites/knife.png" id="3_a2201"]
 [ext_resource type="Texture2D" uid="uid://cilcnrh03wvo1" path="res://Sprites/choppingBoard2.png" id="4_ncfba"]
