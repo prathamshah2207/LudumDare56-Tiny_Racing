@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cqk6u6cdydwtu"]
+[gd_scene load_steps=21 format=3 uid="uid://cqk6u6cdydwtu"]
 
 [ext_resource type="Texture2D" uid="uid://ctkdamwwvk7ff" path="res://resources/floor_tileset/Poliigon_StoneQuartzite_8060/1K/Poliigon_StoneQuartzite_8060_BaseColor.jpg" id="1_j0jx0"]
 [ext_resource type="Script" path="res://Scenes/start_finish_line.gd" id="2_1mtsj"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://b0km4lkntamun" path="res://Sprites/knife.png" id="3_a2201"]
 [ext_resource type="Texture2D" uid="uid://cilcnrh03wvo1" path="res://Sprites/choppingBoard2.png" id="4_ncfba"]
 [ext_resource type="Texture2D" uid="uid://4mw6hu2p16wh" path="res://resources/startline/start piskel.png" id="4_oedf3"]
+[ext_resource type="Texture2D" uid="uid://cuqc7074qvj6h" path="res://Sprites/water_spilled.svg" id="5_35an8"]
+[ext_resource type="Texture2D" uid="uid://bci7dynealimw" path="res://Sprites/sink1.png" id="6_qgwdi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7fgtb"]
 texture = ExtResource("2_lt1y8")
@@ -1743,6 +1745,12 @@ height = 472.864
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rc6fk"]
 size = Vector2(534.777, 546.729)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_6ekcd"]
+radius = 201.308
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iabfj"]
+size = Vector2(464.293, 534.997)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tk2or"]
 size = Vector2(20, 642.5)
 
@@ -1815,6 +1823,39 @@ texture = ExtResource("4_ncfba")
 position = Vector2(1440.48, -2051.13)
 rotation = 2.17608
 shape = SubResource("RectangleShape2D_rc6fk")
+
+[node name="waterSpilled" type="StaticBody2D" parent="CounterSurface/Obstacles"]
+z_index = 5
+rotation = 1.26452
+scale = Vector2(0.2, 0.2)
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CounterSurface/Obstacles/waterSpilled"]
+position = Vector2(4135.37, -3973.03)
+rotation = 0.576725
+scale = Vector2(0.236745, 0.253858)
+texture = ExtResource("5_35an8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CounterSurface/Obstacles/waterSpilled"]
+position = Vector2(4126.32, -3944.43)
+rotation = 2.17608
+shape = SubResource("CircleShape2D_6ekcd")
+
+[node name="sink" type="StaticBody2D" parent="CounterSurface/Obstacles"]
+z_index = 5
+rotation = 1.26452
+scale = Vector2(0.2, 0.2)
+
+[node name="Sprite2D" type="Sprite2D" parent="CounterSurface/Obstacles/sink"]
+position = Vector2(4479.83, -4398.99)
+rotation = 0.312954
+scale = Vector2(3.02628, 3.10385)
+texture = ExtResource("6_qgwdi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CounterSurface/Obstacles/sink"]
+position = Vector2(4482.85, -4408.53)
+rotation = 1.88057
+shape = SubResource("RectangleShape2D_iabfj")
 
 [node name="TrackBoundaries" type="StaticBody2D" parent="."]
 
