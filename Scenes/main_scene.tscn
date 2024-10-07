@@ -1,3 +1,11 @@
-[gd_scene format=3 uid="uid://b210my14y4633"]
+[gd_scene load_steps=2 format=3 uid="uid://b210my14y4633"]
+
+[ext_resource type="Texture2D" uid="uid://rp35lltgshhx" path="res://Sprites/10425089-fotor-bg-remover-20241006232237.png" id="1_2jvvr"]
 
 [node name="Main_Scene" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-253.679, -367.321)
+rotation = 0.862108
+scale = Vector2(0.618714, 0.618714)
+texture = ExtResource("1_2jvvr")
