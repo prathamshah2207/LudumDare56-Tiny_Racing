@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://dod3ebsefr4h8"]
+[gd_scene load_steps=12 format=3 uid="uid://dod3ebsefr4h8"]
 
+[ext_resource type="Texture2D" uid="uid://ctkdamwwvk7ff" path="res://resources/floor_tileset/Poliigon_StoneQuartzite_8060/1K/Poliigon_StoneQuartzite_8060_BaseColor.jpg" id="1_j0jx0"]
 [ext_resource type="Script" path="res://Scenes/start_finish_line.gd" id="2_1mtsj"]
 [ext_resource type="Texture2D" uid="uid://cjto8es6e22q6" path="res://resources/floor_tileset/tilesey/Tilelists/Tilelist2.png" id="2_lt1y8"]
 [ext_resource type="Texture2D" uid="uid://4mw6hu2p16wh" path="res://resources/startline/start piskel.png" id="4_oedf3"]
@@ -1751,6 +1752,7 @@ size = Vector2(100, 19)
 z_index = 1
 position = Vector2(579, 321)
 scale = Vector2(1.13086, 0.626953)
+texture = ExtResource("1_j0jx0")
 
 [node name="TileMap" type="TileMap" parent="CounterSurface"]
 tile_set = SubResource("TileSet_darkd")
