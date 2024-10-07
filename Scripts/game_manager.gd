@@ -23,11 +23,11 @@ func _process(delta: float) -> void:
 			pause_menu.toggle()
 
 func end_race():
-	Engine.time_scale = 0.1
 	var level_complete = get_tree().root.find_child("LevelComplete", true, false)
 	
 	level_complete.find_child("Rank", true, false).text = "1. "+ranking[0]+"\n"+"2. "+ranking[1]+"\n"+"3. "+ranking[2]
 	level_complete.visible = true
+	Engine.time_scale = 0.1
 	print("Race finished!")
 
 func quit_game():
@@ -47,5 +47,7 @@ func add_lap(body: RigidBody2D):
 		racing.erase(body.name)
 		if body.name == "Player":
 			for i in racing:
+				if i == "Player":
+					continue
 				ranking.append(i)
 			end_race()
