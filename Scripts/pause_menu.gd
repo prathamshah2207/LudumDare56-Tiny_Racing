@@ -1,7 +1,9 @@
 extends CanvasLayer
 
+#game pause
 var paused := false
 
+#toggle
 func toggle():
 	if paused:
 		hide()
