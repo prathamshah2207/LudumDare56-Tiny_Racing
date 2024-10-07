@@ -1,6 +1,6 @@
-[gd_scene load_steps=32 format=3 uid="uid://bwd0gsxb321qe"]
+[gd_scene load_steps=32 format=3 uid="uid://dod3ebsefr4h8"]
 
-[ext_resource type="PackedScene" uid="uid://ctgtg7kolhob4" path="res://Scenes/Player.tscn" id="1_hjw4o"]
+[ext_resource type="PackedScene" path="res://Scenes/Player.tscn" id="1_hjw4o"]
 [ext_resource type="Texture2D" uid="uid://ctkdamwwvk7ff" path="res://resources/floor_tileset/Poliigon_StoneQuartzite_8060/1K/Poliigon_StoneQuartzite_8060_BaseColor.jpg" id="1_j0jx0"]
 [ext_resource type="Script" path="res://Scripts/start_finish_line.gd" id="2_1mtsj"]
 [ext_resource type="Texture2D" uid="uid://cjto8es6e22q6" path="res://resources/floor_tileset/tilesey/Tilelists/Tilelist2.png" id="2_lt1y8"]
@@ -14,9 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://6kpvobrv4483" path="res://Sprites/friedEgg_128.png" id="7_q0hnc"]
 [ext_resource type="PackedScene" uid="uid://b4igxx641csf2" path="res://Scripts/Scenes/waypoint_manager.tscn" id="10_8et1v"]
 [ext_resource type="PackedScene" uid="uid://bbiaxhc414u7i" path="res://Scripts/Scenes/line_node.tscn" id="11_khni6"]
-[ext_resource type="PackedScene" uid="uid://csld4j3p01dgy" path="res://Scenes/ai_bot.tscn" id="12_u1m1a"]
-[ext_resource type="PackedScene" path="res://Scenes/pause_menu.tscn" id="16_cwwsq"]
-[ext_resource type="PackedScene" uid="uid://cw224bdtr1uut" path="res://Scenes/LevelComplete.tscn" id="17_w236h"]
+[ext_resource type="PackedScene" uid="uid://csld4j3p01dgy" path="res://Scripts/Scenes/ai_bot.tscn" id="12_u1m1a"]
+[ext_resource type="PackedScene" uid="uid://lp0pwycl6e6" path="res://Scenes/pause_menu.tscn" id="16_cwwsq"]
+[ext_resource type="PackedScene" path="res://Scenes/LevelComplete.tscn" id="17_w236h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7fgtb"]
 texture = ExtResource("2_lt1y8")
