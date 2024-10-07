@@ -6,6 +6,8 @@ extends RigidBody2D
 # Current speed (will vary between base and boost speed)
 var speed := 350.0
 
+var lap_count := 0
+
 func _ready():
 	pass
 

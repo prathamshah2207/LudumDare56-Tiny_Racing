@@ -7,6 +7,8 @@ extends RigidBody2D
 @export var drift_multiplier := 1.6
 @export var min_distance_to_reach_waypoint := 10.0  # Distance threshold for waypoint switch
 
+var lap_count := 0
+
 var current_waypoint : Node2D = null
 var waypoint_manager : Node2D = null
 @export var root_name : String = "KitchenCounterTrack"

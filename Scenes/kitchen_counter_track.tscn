@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bwd0gsxb321qe"]
+[gd_scene load_steps=32 format=3 uid="uid://bwd0gsxb321qe"]
 
 [ext_resource type="PackedScene" uid="uid://ctgtg7kolhob4" path="res://Scenes/Player.tscn" id="1_hjw4o"]
 [ext_resource type="Texture2D" uid="uid://ctkdamwwvk7ff" path="res://resources/floor_tileset/Poliigon_StoneQuartzite_8060/1K/Poliigon_StoneQuartzite_8060_BaseColor.jpg" id="1_j0jx0"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://bbiaxhc414u7i" path="res://Scripts/Scenes/line_node.tscn" id="11_khni6"]
 [ext_resource type="PackedScene" uid="uid://csld4j3p01dgy" path="res://Scenes/ai_bot.tscn" id="12_u1m1a"]
 [ext_resource type="PackedScene" path="res://Scenes/pause_menu.tscn" id="16_cwwsq"]
+[ext_resource type="PackedScene" uid="uid://cw224bdtr1uut" path="res://Scenes/LevelComplete.tscn" id="17_w236h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7fgtb"]
 texture = ExtResource("2_lt1y8")
@@ -2002,7 +2003,7 @@ position = Vector2(60, 474)
 
 [node name="Bots" type="Node" parent="."]
 
-[node name="AIBot" parent="Bots" instance=ExtResource("12_u1m1a")]
+[node name="AIBot1" parent="Bots" instance=ExtResource("12_u1m1a")]
 z_index = 7
 position = Vector2(54, 390)
 
@@ -2020,6 +2021,10 @@ position = Vector2(140, 460)
 
 [node name="PauseMenu" parent="." instance=ExtResource("16_cwwsq")]
 visible = false
+
+[node name="LevelComplete" parent="." instance=ExtResource("17_w236h")]
+layer = 4
+script = null
 
 [connection signal="body_entered" from="CounterSurface/Obstacles/waterSpilled" to="CounterSurface/Obstacles/waterSpilled" method="_on_body_entered"]
 [connection signal="body_exited" from="CounterSurface/Obstacles/waterSpilled" to="CounterSurface/Obstacles/waterSpilled" method="_on_body_exited"]
