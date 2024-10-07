@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://gtoki80nsy72"
-path="res://.godot/imported/bugs.png-99e8af311bf087a02421470d26012657.ctex"
+path="res://.godot/imported/bugs.png-11472d59c987c375e8ac8afbff5bf1c0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scripts/bugs.png"
-dest_files=["res://.godot/imported/bugs.png-99e8af311bf087a02421470d26012657.ctex"]
+source_file="res://Sprites/bugs.png"
+dest_files=["res://.godot/imported/bugs.png-11472d59c987c375e8ac8afbff5bf1c0.ctex"]
 
 [params]
 
