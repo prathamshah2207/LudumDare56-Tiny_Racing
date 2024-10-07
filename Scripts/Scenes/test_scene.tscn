@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bumevhqrog8hy"]
+
+[ext_resource type="PackedScene" uid="uid://cyhhtq5b65534" path="res://Scenes/Player.tscn" id="1_6h244"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(458, 607)
+points = PackedVector2Array(-926, -64, 666, -79, 646, -353, 117, -425, 133, -723, 577, -956, 657, -1147, -773, -1123)
+
+[node name="Player" parent="." instance=ExtResource("1_6h244")]

@@ -3,11 +3,14 @@ extends Node
 @export var total_laps: int = 3
 #@export var start_line_position: Vector2 = Vector2(579, 326)
 
+var lap_count: Dictionary = {"Player": 0, "AIBot1": 0, "AIBot2": 0, "AIBot3": 0, "AIBot4": 0}
+
+var racing: Array = ["Player", "AIBot1", "AIBot2", "AIBot3", "AIBot4"]
+var ranking: Array = []
+
 var current_lap: int = 0
 var race_started: bool = false
-var is_finished: bool = false
 var is_paused: bool = false
-var bots: Array = []
 var mainScence: Node
 var pause_menu = null
 
@@ -19,16 +22,12 @@ func _process(delta: float) -> void:
 			pause_menu = current_scene.find_child("PauseMenu")
 			pause_menu.toggle()
 
-func complete_lap():
-		current_lap += 1
-		emit_signal("lap_completed", current_lap, total_laps)
-		print("Lap " + str(current_lap) + " completed!")
-		
-		if current_lap >= total_laps:
-			end_race()
-
 func end_race():
-	is_finished = true
+	var level_complete = get_tree().root.find_child("LevelComplete", true, false)
+	
+	level_complete.find_child("Rank", true, false).text = "1. "+ranking[0]+"\n"+"2. "+ranking[1]+"\n"+"3. "+ranking[2]
+	level_complete.visible = true
+	Engine.time_scale = 0.1
 	print("Race finished!")
 
 func quit_game():
@@ -40,5 +39,15 @@ func start_game():
 
 func back_to_menu():
 	get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
-func add_bot(bot):
-	bots.append(bot)
+
+func add_lap(body: RigidBody2D):
+	lap_count[body.name] += 1
+	if lap_count[body.name] == 4:
+		ranking.append(body.name)
+		racing.erase(body.name)
+		if body.name == "Player":
+			for i in racing:
+				if i == "Player":
+					continue
+				ranking.append(i)
+			end_race()
