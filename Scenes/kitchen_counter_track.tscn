@@ -2023,8 +2023,7 @@ position = Vector2(140, 460)
 visible = false
 
 [node name="LevelComplete" parent="." instance=ExtResource("17_w236h")]
-layer = 4
-script = null
+visible = false
 
 [connection signal="body_entered" from="CounterSurface/Obstacles/waterSpilled" to="CounterSurface/Obstacles/waterSpilled" method="_on_body_entered"]
 [connection signal="body_exited" from="CounterSurface/Obstacles/waterSpilled" to="CounterSurface/Obstacles/waterSpilled" method="_on_body_exited"]
