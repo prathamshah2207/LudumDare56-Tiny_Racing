@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dod3ebsefr4h8"]
+[gd_scene load_steps=13 format=3 uid="uid://cqk6u6cdydwtu"]
 
 [ext_resource type="Texture2D" uid="uid://ctkdamwwvk7ff" path="res://resources/floor_tileset/Poliigon_StoneQuartzite_8060/1K/Poliigon_StoneQuartzite_8060_BaseColor.jpg" id="1_j0jx0"]
 [ext_resource type="Script" path="res://Scenes/start_finish_line.gd" id="2_1mtsj"]
@@ -1731,6 +1731,9 @@ texture = ExtResource("2_lt1y8")
 [sub_resource type="TileSet" id="TileSet_darkd"]
 sources/0 = SubResource("TileSetAtlasSource_7fgtb")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tkow1"]
+size = Vector2(638.452, 633.221)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tk2or"]
 size = Vector2(20, 642.5)
 
@@ -1744,7 +1747,7 @@ size = Vector2(20, 643)
 size = Vector2(1158.5, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kmtmg"]
-size = Vector2(100, 19)
+size = Vector2(100, 24.5)
 
 [node name="KitchenCounterTrack" type="Node2D"]
 
@@ -1768,6 +1771,10 @@ points = PackedVector2Array(-336.027, -303.053, 301.54, -303.053, 301.54, 334.95
 width = 5.0
 default_color = Color(0.01, 0.01, 0.01, 1)
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CounterSurface/TileMap"]
+position = Vector2(-17.6857, 14.3551)
+shape = SubResource("RectangleShape2D_tkow1")
+
 [node name="TrackBoundaries" type="StaticBody2D" parent="."]
 
 [node name="left_edge" type="CollisionShape2D" parent="TrackBoundaries"]
@@ -1790,11 +1797,10 @@ shape = SubResource("RectangleShape2D_vbc00")
 script = ExtResource("2_1mtsj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StartFinishLine"]
-position = Vector2(49, 632)
+position = Vector2(98, 320)
 shape = SubResource("RectangleShape2D_kmtmg")
 
 [node name="Sprite2D" type="Sprite2D" parent="StartFinishLine/CollisionShape2D"]
 z_index = 1
-position = Vector2(48.5, -308)
 scale = Vector2(2.71094, 0.416016)
 texture = ExtResource("4_oedf3")
