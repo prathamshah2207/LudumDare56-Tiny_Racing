@@ -11,14 +11,10 @@ config_version=5
 [application]
 
 config/name="ludumDare"
-<<<<<<< HEAD
-run/main_scene="res://Scenes/test_scene.tscn"
-=======
 run/main_scene="res://Scenes/kitchen_counter_track.tscn"
->>>>>>> master
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
-<<<<<<<HEADrun/main_scene="res://Scenes/bot_test_scene.tscn"
+<<<<<<<HEADrun/main_scene="res://Scenes/test_scene.tscn"
 
 [autoload]
 

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbiaxhc414u7i"]
+
+[ext_resource type="Script" path="res://Scripts/waypoint_node.gd" id="1_cdmpe"]
+
+[node name="LineNode" type="Node2D"]
+script = ExtResource("1_cdmpe")
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(-50, 0, 50, 0)
+width = 5.0
