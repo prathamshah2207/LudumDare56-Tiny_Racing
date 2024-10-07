@@ -18,7 +18,7 @@ var is_finished: bool = false
 var is_paused: bool = false
 var bots: Array = []
 
-@onready var player_car = get_node(player_car_path)
+#@onready var player_car = get_node(player_car_path)
 
 func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS  # Ensure this node isn't affected by pause

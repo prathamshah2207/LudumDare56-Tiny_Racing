@@ -1,14 +1,18 @@
-[gd_scene load_steps=23 format=3 uid="uid://cqk6u6cdydwtu"]
+[gd_scene load_steps=28 format=3 uid="uid://ycpjrcyw253r"]
 
 [ext_resource type="Texture2D" uid="uid://ctkdamwwvk7ff" path="res://resources/floor_tileset/Poliigon_StoneQuartzite_8060/1K/Poliigon_StoneQuartzite_8060_BaseColor.jpg" id="1_j0jx0"]
-[ext_resource type="Script" path="res://Scenes/start_finish_line.gd" id="2_1mtsj"]
+[ext_resource type="Script" path="res://Scripts/start_finish_line.gd" id="2_1mtsj"]
 [ext_resource type="Texture2D" uid="uid://cjto8es6e22q6" path="res://resources/floor_tileset/tilesey/Tilelists/Tilelist2.png" id="2_lt1y8"]
 [ext_resource type="Texture2D" uid="uid://b0km4lkntamun" path="res://Sprites/knife.png" id="3_a2201"]
 [ext_resource type="Texture2D" uid="uid://cilcnrh03wvo1" path="res://Sprites/choppingBoard2.png" id="4_ncfba"]
 [ext_resource type="Texture2D" uid="uid://4mw6hu2p16wh" path="res://resources/startline/start piskel.png" id="4_oedf3"]
 [ext_resource type="Texture2D" uid="uid://cuqc7074qvj6h" path="res://Sprites/water_spilled.svg" id="5_35an8"]
+[ext_resource type="Script" path="res://Scripts/slow_effect.gd" id="5_ykjl7"]
 [ext_resource type="Texture2D" uid="uid://bci7dynealimw" path="res://Sprites/sink1.png" id="6_qgwdi"]
 [ext_resource type="Texture2D" uid="uid://6kpvobrv4483" path="res://Sprites/friedEgg_128.png" id="7_q0hnc"]
+[ext_resource type="PackedScene" uid="uid://b4igxx641csf2" path="res://Scenes/waypoint_manager.tscn" id="10_8et1v"]
+[ext_resource type="PackedScene" uid="uid://bbiaxhc414u7i" path="res://Scenes/line_node.tscn" id="11_khni6"]
+[ext_resource type="PackedScene" uid="uid://csld4j3p01dgy" path="res://Scenes/ai_bot.tscn" id="12_u1m1a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7fgtb"]
 texture = ExtResource("2_lt1y8")
@@ -1770,6 +1774,9 @@ size = Vector2(1158.5, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kmtmg"]
 size = Vector2(199, 20.25)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0b3s4"]
+size = Vector2(196, 20)
+
 [node name="KitchenCounterTrack" type="Node2D"]
 
 [node name="CounterSurface" type="Sprite2D" parent="."]
@@ -1792,8 +1799,10 @@ points = PackedVector2Array(-336.027, -303.053, 301.54, -303.053, 301.54, 334.95
 width = 5.0
 default_color = Color(0.01, 0.01, 0.01, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CounterSurface/TileMap"]
-position = Vector2(-17.6857, 14.3551)
+[node name="StaticBody2D" type="StaticBody2D" parent="CounterSurface/TileMap"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CounterSurface/TileMap/StaticBody2D"]
+position = Vector2(-17.6857, 14.355)
 shape = SubResource("RectangleShape2D_tkow1")
 
 [node name="Obstacles" type="Node" parent="CounterSurface"]
@@ -1828,11 +1837,12 @@ position = Vector2(1440.48, -2051.13)
 rotation = 2.17608
 shape = SubResource("RectangleShape2D_rc6fk")
 
-[node name="waterSpilled" type="StaticBody2D" parent="CounterSurface/Obstacles"]
+[node name="waterSpilled" type="Area2D" parent="CounterSurface/Obstacles"]
 z_index = 5
 rotation = 1.26452
 scale = Vector2(0.2, 0.2)
 collision_layer = 2
+script = ExtResource("5_ykjl7")
 
 [node name="Sprite2D" type="Sprite2D" parent="CounterSurface/Obstacles/waterSpilled"]
 position = Vector2(4135.37, -3973.03)
@@ -1861,10 +1871,12 @@ position = Vector2(4482.85, -4408.53)
 rotation = 1.88057
 shape = SubResource("RectangleShape2D_iabfj")
 
-[node name="omlet" type="StaticBody2D" parent="CounterSurface/Obstacles"]
+[node name="omlet" type="Area2D" parent="CounterSurface/Obstacles"]
 z_index = 5
 rotation = 1.26452
 scale = Vector2(0.2, 0.2)
+collision_layer = 2
+script = ExtResource("5_ykjl7")
 
 [node name="Sprite2D" type="Sprite2D" parent="CounterSurface/Obstacles/omlet"]
 position = Vector2(2821.34, 16.436)
@@ -1896,7 +1908,9 @@ shape = SubResource("RectangleShape2D_rfmfw")
 position = Vector2(576.75, 652)
 shape = SubResource("RectangleShape2D_vbc00")
 
-[node name="StartFinishLine" type="StaticBody2D" parent="." groups=["racers"]]
+[node name="StartFinishLine" type="Area2D" parent="." groups=["racers"]]
+z_index = 3
+collision_layer = 4
 script = ExtResource("2_1mtsj")
 
 [node name="Sprite2D" type="Sprite2D" parent="StartFinishLine"]
@@ -1907,5 +1921,95 @@ texture = ExtResource("4_oedf3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StartFinishLine"]
 position = Vector2(97.5, 317.875)
+rotation = -3.14159
 shape = SubResource("RectangleShape2D_kmtmg")
+
+[node name="OneWayPass" type="StaticBody2D" parent="StartFinishLine"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StartFinishLine/OneWayPass"]
+position = Vector2(98, 301)
+scale = Vector2(1, 0.25)
+shape = SubResource("RectangleShape2D_0b3s4")
 one_way_collision = true
+
+[node name="WaypointManager" parent="." instance=ExtResource("10_8et1v")]
+z_index = 6
+
+[node name="LineNode" parent="WaypointManager" instance=ExtResource("11_khni6")]
+position = Vector2(97.5, 250)
+
+[node name="LineNode2" parent="WaypointManager" instance=ExtResource("11_khni6")]
+position = Vector2(111, 70)
+rotation = 0.666716
+
+[node name="LineNode3" parent="WaypointManager" instance=ExtResource("11_khni6")]
+position = Vector2(516, 92)
+rotation = 1.5708
+scale = Vector2(0.59, 1)
+
+[node name="LineNode4" parent="WaypointManager" instance=ExtResource("11_khni6")]
+position = Vector2(735, 67)
+rotation = 1.5708
+
+[node name="LineNode5" parent="WaypointManager" instance=ExtResource("11_khni6")]
+position = Vector2(898, 72)
+rotation = 1.5708
+scale = Vector2(0.63, 1)
+
+[node name="LineNode6" parent="WaypointManager" instance=ExtResource("11_khni6")]
+position = Vector2(1084, 68)
+rotation = -0.666716
+scale = Vector2(0.63, 1)
+
+[node name="LineNode7" parent="WaypointManager" instance=ExtResource("11_khni6")]
+position = Vector2(1095, 190)
+
+[node name="LineNode8" parent="WaypointManager" instance=ExtResource("11_khni6")]
+position = Vector2(1032, 467)
+
+[node name="LineNode9" parent="WaypointManager" instance=ExtResource("11_khni6")]
+position = Vector2(958, 589)
+rotation = 0.549779
+scale = Vector2(0.755, 1)
+
+[node name="LineNode10" parent="WaypointManager" instance=ExtResource("11_khni6")]
+position = Vector2(822, 587)
+rotation = 1.5708
+scale = Vector2(0.85, 1)
+
+[node name="LineNode11" parent="WaypointManager" instance=ExtResource("11_khni6")]
+position = Vector2(318, 598)
+rotation = 1.5708
+scale = Vector2(0.85, 1)
+
+[node name="LineNode12" parent="WaypointManager" instance=ExtResource("11_khni6")]
+position = Vector2(84, 605)
+rotation = 2.26893
+scale = Vector2(0.85, 1)
+
+[node name="LineNode13" parent="WaypointManager" instance=ExtResource("11_khni6")]
+position = Vector2(60, 474)
+
+[node name="Bots" type="Node" parent="."]
+
+[node name="AIBot" parent="Bots" instance=ExtResource("12_u1m1a")]
+z_index = 7
+position = Vector2(54, 390)
+
+[node name="AIBot2" parent="Bots" instance=ExtResource("12_u1m1a")]
+z_index = 7
+position = Vector2(138, 389)
+
+[node name="AIBot3" parent="Bots" instance=ExtResource("12_u1m1a")]
+z_index = 7
+position = Vector2(55, 461)
+
+[node name="AIBot4" parent="Bots" instance=ExtResource("12_u1m1a")]
+z_index = 7
+position = Vector2(140, 460)
+
+[connection signal="body_entered" from="CounterSurface/Obstacles/waterSpilled" to="CounterSurface/Obstacles/waterSpilled" method="_on_body_entered"]
+[connection signal="body_exited" from="CounterSurface/Obstacles/waterSpilled" to="CounterSurface/Obstacles/waterSpilled" method="_on_body_exited"]
+[connection signal="body_entered" from="CounterSurface/Obstacles/omlet" to="CounterSurface/Obstacles/omlet" method="_on_body_entered"]
+[connection signal="body_exited" from="CounterSurface/Obstacles/omlet" to="CounterSurface/Obstacles/omlet" method="_on_body_exited"]
+[connection signal="body_entered" from="StartFinishLine" to="StartFinishLine" method="_on_body_entered"]

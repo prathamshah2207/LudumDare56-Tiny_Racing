@@ -1,15 +1,15 @@
 extends RigidBody2D
 
-@export var speed := randf_range(400.0, 600.0)  # Max speed
-@export var acceleration := randf_range(150.0, 250.0)  # How fast it accelerates to max speed
-@export var turn_speed := 5.0  # Max angular velocity for turning
-@export var drift_threshold := 0.2  # Threshold for drifting
-@export var drift_multiplier := 0.9
-@export var min_distance_to_reach_waypoint := 50.0  # Distance threshold for waypoint switch
+@export var speed := randf_range(140.0, 250.0)  # Max speed
+@export var acceleration := randf_range(90.0, 120.0)  # How fast it accelerates to max speed
+@export var turn_speed := 8.5  # Max angular velocity for turning
+@export var drift_threshold := 0.15  # Threshold for drifting
+@export var drift_multiplier := 1.6
+@export var min_distance_to_reach_waypoint := 10.0  # Distance threshold for waypoint switch
 
 var current_waypoint : Node2D = null
 var waypoint_manager : Node2D = null
-@export var root_name : String = "Bot_TestScene"
+@export var root_name : String = "KitchenCounterTrack"
 
 var current_speed := 0.0  # Start speed at 0
 var last_direction := Vector2.ZERO  # Store last direction for drifting
