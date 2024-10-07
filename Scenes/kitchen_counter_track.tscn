@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://ycpjrcyw253r"]
+[gd_scene load_steps=28 format=3 uid="uid://cqk6u6cdydwtu"]
 
 [ext_resource type="Texture2D" uid="uid://ctkdamwwvk7ff" path="res://resources/floor_tileset/Poliigon_StoneQuartzite_8060/1K/Poliigon_StoneQuartzite_8060_BaseColor.jpg" id="1_j0jx0"]
 [ext_resource type="Script" path="res://Scripts/start_finish_line.gd" id="2_1mtsj"]
@@ -10,9 +10,9 @@
 [ext_resource type="Script" path="res://Scripts/slow_effect.gd" id="5_ykjl7"]
 [ext_resource type="Texture2D" uid="uid://bci7dynealimw" path="res://Sprites/sink1.png" id="6_qgwdi"]
 [ext_resource type="Texture2D" uid="uid://6kpvobrv4483" path="res://Sprites/friedEgg_128.png" id="7_q0hnc"]
-[ext_resource type="PackedScene" uid="uid://b4igxx641csf2" path="res://Scenes/waypoint_manager.tscn" id="10_8et1v"]
-[ext_resource type="PackedScene" uid="uid://bbiaxhc414u7i" path="res://Scenes/line_node.tscn" id="11_khni6"]
-[ext_resource type="PackedScene" uid="uid://csld4j3p01dgy" path="res://Scenes/ai_bot.tscn" id="12_u1m1a"]
+[ext_resource type="PackedScene" path="res://Scenes/waypoint_manager.tscn" id="10_8et1v"]
+[ext_resource type="PackedScene" path="res://Scenes/line_node.tscn" id="11_khni6"]
+[ext_resource type="PackedScene" path="res://Scenes/ai_bot.tscn" id="12_u1m1a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7fgtb"]
 texture = ExtResource("2_lt1y8")
