@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cqk6u6cdydwtu"]
+[gd_scene load_steps=28 format=3 uid="uid://cqk6u6cdydwtu"]
 
 [ext_resource type="Texture2D" uid="uid://ctkdamwwvk7ff" path="res://resources/floor_tileset/Poliigon_StoneQuartzite_8060/1K/Poliigon_StoneQuartzite_8060_BaseColor.jpg" id="1_j0jx0"]
 [ext_resource type="Script" path="res://Scripts/start_finish_line.gd" id="2_1mtsj"]
@@ -13,10 +13,6 @@
 [ext_resource type="PackedScene" path="res://Scenes/waypoint_manager.tscn" id="10_8et1v"]
 [ext_resource type="PackedScene" path="res://Scenes/line_node.tscn" id="11_khni6"]
 [ext_resource type="PackedScene" uid="uid://cf5obucwm71vv" path="res://Scenes/ai_bot.tscn" id="12_u1m1a"]
-<<<<<<< HEAD
-=======
-[ext_resource type="PackedScene" path="res://Scenes/pause_menu.tscn" id="14_spwhs"]
->>>>>>> master
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7fgtb"]
 texture = ExtResource("2_lt1y8")
@@ -2011,9 +2007,6 @@ position = Vector2(55, 461)
 [node name="AIBot4" parent="Bots" instance=ExtResource("12_u1m1a")]
 z_index = 7
 position = Vector2(140, 460)
-
-[node name="PauseMenu" parent="." instance=ExtResource("14_spwhs")]
-visible = false
 
 [connection signal="body_entered" from="CounterSurface/Obstacles/waterSpilled" to="CounterSurface/Obstacles/waterSpilled" method="_on_body_entered"]
 [connection signal="body_exited" from="CounterSurface/Obstacles/waterSpilled" to="CounterSurface/Obstacles/waterSpilled" method="_on_body_exited"]
