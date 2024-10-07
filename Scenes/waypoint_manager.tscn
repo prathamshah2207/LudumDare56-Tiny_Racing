@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://xv28867g5b80"]
+[gd_scene load_steps=2 format=3 uid="uid://b4igxx641csf2"]
 
 [ext_resource type="Script" path="res://Scripts/waypoint_manager.gd" id="1_qsxnr"]
 
