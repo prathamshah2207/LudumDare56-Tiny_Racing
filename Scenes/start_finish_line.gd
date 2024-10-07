@@ -1,4 +1,4 @@
-extends Area2D
+extends StaticBody2D
 
 # Signal to notify when a racer crosses the line
 signal racer_crossed(racer)
