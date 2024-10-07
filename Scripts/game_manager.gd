@@ -16,7 +16,7 @@ func _process(delta: float) -> void:
 		var current_scene = get_tree().current_scene
 		if current_scene.name != "MainMenu":
 			print("paused")
-			pause_menu = current_scene.get_node("PauseMenu")
+			pause_menu = current_scene.find_child("PauseMenu")
 			pause_menu.toggle()
 
 func complete_lap():
