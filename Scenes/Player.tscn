@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cg8e2hu038fm0" path="res://Sprites/cart_sprites.png" id="2_q1qh5"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_omch4"]
-bounce = 100.0
+bounce = 0.2
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_apxcg"]
 atlas = ExtResource("2_q1qh5")
@@ -82,7 +82,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"run ",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -104,28 +104,23 @@ radius = 22.0
 height = 166.667
 
 [node name="Player" type="RigidBody2D"]
+mass = 10.0
 physics_material_override = SubResource("PhysicsMaterial_omch4")
 gravity_scale = 0.0
+center_of_mass_mode = 1
+center_of_mass = Vector2(0, 8)
+inertia = 100.0
+linear_damp = 5.0
+angular_damp = 10.0
 script = ExtResource("1_2nj5j")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(448.5, 219)
 scale = Vector2(0.4, 0.452)
 sprite_frames = SubResource("SpriteFrames_4xsg5")
-animation = &"idel"
+animation = &"run "
 autoplay = "idel"
-frame_progress = 0.577666
+frame_progress = 0.184739
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(449, 221)
 scale = Vector2(0.5, 0.24)
 shape = SubResource("CapsuleShape2D_iskdk")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-texture_filter = 1
-position = Vector2(445, 211)
-zoom = Vector2(0.5, 0.5)
-limit_smoothed = true
-position_smoothing_enabled = true
-rotation_smoothing_enabled = true
-rotation_smoothing_speed = 1.5
