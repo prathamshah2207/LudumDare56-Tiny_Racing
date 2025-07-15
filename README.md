@@ -54,7 +54,7 @@ In *Tiny Racing*, players control tiny creatures racing through unconventional e
 
 ## 📝 How to Play
 1. Download and open the project in **Godot Engine**.  
-2. Run the main scene (`Main.tscn`).  
+2. Run the main scene (`MainMenu.tscn`).  
 3. Control your racer:
    - **Up/Down Arrows**: Move
    - **Left/Right Arrows**: Steer
